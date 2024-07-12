@@ -29,15 +29,17 @@ for kwd_list in (pbar:=tqdm(config["keywords"], position=0, leave=True)):
     )
 
     if os.path.isfile(config["interest_over_time_file"]):
-        interest_over_time.to_csv(config["interest_over_time_file"], index=False)
-    else:
         interest_over_time.to_csv(
             config["interest_over_time_file"], mode="a", header=False, index=False
         )
+    else:
+        interest_over_time.to_csv(config["interest_over_time_file"], index=False)
+        
 
     if os.path.isfile(config["releated_keywords_file"]):
-        kwd_related_queries.to_csv(config["releated_keywords_file"], index=False)
-    else:
-        kwd_related_queries.to_csv(
+         kwd_related_queries.to_csv(
             config["releated_keywords_file"], mode="a", header=False, index=False
         )
+    else:
+        kwd_related_queries.to_csv(config["releated_keywords_file"], index=False)
+       
